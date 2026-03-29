@@ -38,12 +38,11 @@ export default function TabDetailsView({
   const supabase = createClient();
   const router = useRouter();
 
-  if ("vibrate" in navigator) {
-    // Optional tactile feedback helper
-    var haptic = () => navigator.vibrate(50);
-  } else {
-    var haptic = () => {};
-  }
+  const haptic = () => {
+    if (typeof navigator !== "undefined" && "vibrate" in navigator) {
+      navigator.vibrate(50);
+    }
+  };
 
   const handleQuickAdd = async (qItem: QuickItem) => {
     haptic(); // Tactile feedback
