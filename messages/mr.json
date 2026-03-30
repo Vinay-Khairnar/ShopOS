@@ -39,8 +39,11 @@
     "pricePlaceholder": "10",
     "addItem": "आयटम जोडा",
     "adding": "जोडत आहे...",
-    "currentQuickItems": "सध्याचे क्विक आयटम",
-    "noItems": "अद्याप कोणताही आयटम जोडलेला नाही."
+    "currentQuickItems": "सध्याचे त्वरित आयटम",
+    "noItems": "अद्याप कोणतेही आयटम जोडलेले नाहीत.",
+    "cancel": "रद्द करा",
+    "save": "जतन करा",
+    "saving": "जतन करत आहे..."
   },
   "NewTabDialog": {
     "title": "नवीन ग्राहक टॅब",

@@ -40,7 +40,10 @@
     "addItem": "Add Item",
     "adding": "Adding...",
     "currentQuickItems": "Current Quick Items",
-    "noItems": "No items added yet."
+    "noItems": "No items added yet.",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saving": "Saving..."
   },
   "NewTabDialog": {
     "title": "New Customer Tab",
