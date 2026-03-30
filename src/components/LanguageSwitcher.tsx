@@ -23,11 +23,11 @@ export function LanguageSwitcher() {
         onChange={(e) => onChange(e.target.value)}
         disabled={isPending}
         aria-label="Language"
-        className="block w-full rounded-md border-0 py-1.5 pl-3 pr-8 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6 bg-white shadow-sm"
+        className="block w-auto rounded-full border-0 py-1 pl-2 pr-6 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 text-xs font-bold bg-white shadow-sm"
       >
-        <option value="en">English (EN)</option>
-        <option value="hi">हिंदी (HI)</option>
-        <option value="mr">मराठी (MR)</option>
+        <option value="en">EN</option>
+        <option value="hi">HI</option>
+        <option value="mr">MR</option>
       </select>
     </div>
   );

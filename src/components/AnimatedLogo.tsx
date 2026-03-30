@@ -15,12 +15,10 @@ export default function AnimatedLogo({ className }: { className?: string }) {
   return (
     <div className={cn("flex items-center gap-2 group cursor-pointer", className)}>
       <svg
-        width="160"
-        height="40"
         viewBox="0 0 160 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="text-[#155fc3] drop-shadow-sm"
+        className="w-[120px] sm:w-[160px] h-auto text-[#155fc3] drop-shadow-sm shrink-0"
       >
         {/* Cart Handle & base line */}
         <path
