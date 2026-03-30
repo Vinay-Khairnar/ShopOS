@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Plus, Trash2 } from "lucide-react";
 import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export default function SettingsClient({ 
   items,
@@ -17,6 +18,7 @@ export default function SettingsClient({
   const [loading, setLoading] = useState(false);
   const supabase = createClient();
   const router = useRouter();
+  const t = useTranslations("Settings");
 
   const handleAdd = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,24 +71,24 @@ export default function SettingsClient({
     <div className="space-y-8">
       {/* Add New Item Form */}
       <div className="bg-white border border-neutral-200 rounded-3xl p-6 shadow-sm">
-        <h3 className="text-lg font-bold text-neutral-900 mb-4">Add Quick Item</h3>
+        <h3 className="text-lg font-bold text-neutral-900 mb-4">{t('addQuickItem')}</h3>
         <form onSubmit={handleAdd} className="space-y-4">
           <div>
             <label className="block text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2">
-              Item Name
+              {t('itemName')}
             </label>
             <input
               type="text"
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="e.g. Medium Tea"
+              placeholder={t('itemNamePlaceholder')}
               className="w-full rounded-xl border-neutral-300 bg-neutral-50 px-4 py-3 text-neutral-900 focus:border-blue-500 focus:bg-white outline-none border transition-colors"
             />
           </div>
           <div>
             <label className="block text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2">
-              Price (₹)
+              {t('price')}
             </label>
             <input
               type="number"
@@ -95,7 +97,7 @@ export default function SettingsClient({
               step="0.5"
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              placeholder="10"
+              placeholder={t('pricePlaceholder')}
               className="w-full rounded-xl border-neutral-300 bg-neutral-50 px-4 py-3 text-neutral-900 focus:border-blue-500 focus:bg-white outline-none border transition-colors"
               inputMode="decimal"
             />
@@ -105,7 +107,7 @@ export default function SettingsClient({
             disabled={loading || !name.trim() || !price}
             className="w-full flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-white font-bold hover:bg-blue-700 active:bg-blue-800 disabled:opacity-50 transition-colors"
           >
-            {loading ? "Adding..." : <><Plus className="w-5 h-5"/> Add Item</>}
+            {loading ? t('adding') : <><Plus className="w-5 h-5"/> {t('addItem')}</>}
           </button>
         </form>
       </div>
@@ -113,12 +115,12 @@ export default function SettingsClient({
       {/* Existing Items List */}
       <div>
         <h3 className="text-sm font-bold text-neutral-500 uppercase tracking-wider mb-3 px-1">
-          Current Quick Items
+          {t('currentQuickItems')}
         </h3>
         
         {items.length === 0 ? (
           <div className="bg-white border border-neutral-200 border-dashed rounded-2xl p-8 text-center text-neutral-500 text-sm">
-            No items added yet.
+            {t('noItems')}
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-3">

@@ -17,7 +17,34 @@
     "failedToLoad": "सक्रिय टैब लोड करने में विफल।",
     "noActiveTabs": "कोई सक्रिय टैब नहीं है",
     "noActiveTabsDesc": "जब कोई ग्राहक आए, तो टैब शुरू करने के लिए नीचे + बटन दबाएं।",
-    "khata": "खाता",
     "unknown": "अज्ञात"
+  },
+  "Khata": {
+    "title": "खाता बुक",
+    "subtitle": "लंबित भुगतान",
+    "totalOwed": "कुल बकाया",
+    "failedToLoad": "खाता डेटाबेस लोड करने में विफल।",
+    "allClear": "सब साफ़!",
+    "nobodyOwes": "अभी कोई आप पर बकाया नहीं है।",
+    "tapToClear": "राशि साफ़ करने के लिए टैप करें"
+  },
+  "Settings": {
+    "title": "सेटिंग्स",
+    "subtitle": "मानक इन्वेंट्री मूल्य प्रबंधित करें",
+    "failedToLoad": "आइटम लोड करने में विफल।",
+    "addQuickItem": "क्विक आइटम जोड़ें",
+    "itemName": "आइटम का नाम",
+    "itemNamePlaceholder": "उदाहरण: मध्यम चाय",
+    "price": "मूल्य (₹)",
+    "pricePlaceholder": "10",
+    "addItem": "आइटम जोड़ें",
+    "adding": "जोड़ रहा है...",
+    "currentQuickItems": "वर्तमान क्विक आइटम",
+    "noItems": "अभी तक कोई आइटम नहीं जोड़ा गया है।"
+  },
+  "BottomNav": {
+    "tabs": "टैब",
+    "khata": "खाता",
+    "settings": "सेटिंग्स"
   }
 }

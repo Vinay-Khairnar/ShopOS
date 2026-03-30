@@ -4,14 +4,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LayoutDashboard, BookText, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 export default function BottomNav() {
   const pathname = usePathname();
+  const t = useTranslations("BottomNav");
 
   const links = [
-    { name: "Tabs", href: "/dashboard", icon: LayoutDashboard },
-    { name: "Khata", href: "/dashboard/khata", icon: BookText },
-    { name: "Settings", href: "/dashboard/settings", icon: Settings },
+    { name: t("tabs"), href: "/dashboard", icon: LayoutDashboard },
+    { name: t("khata"), href: "/dashboard/khata", icon: BookText },
+    { name: t("settings"), href: "/dashboard/settings", icon: Settings },
   ];
 
   return (

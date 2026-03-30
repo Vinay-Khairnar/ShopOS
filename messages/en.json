@@ -17,7 +17,34 @@
     "failedToLoad": "Failed to load active tabs.",
     "noActiveTabs": "No active tabs",
     "noActiveTabsDesc": "Tap the + button below when a customer arrives to start a tab.",
-    "khata": "Khata",
     "unknown": "Unknown"
+  },
+  "Khata": {
+    "title": "Khata Book",
+    "subtitle": "Pending payments",
+    "totalOwed": "Total Owed",
+    "failedToLoad": "Failed to load khata database.",
+    "allClear": "All clear!",
+    "nobodyOwes": "Nobody owes you any money right now.",
+    "tapToClear": "Tap to clear amount"
+  },
+  "Settings": {
+    "title": "Settings",
+    "subtitle": "Manage standard inventory prices",
+    "failedToLoad": "Failed to load items.",
+    "addQuickItem": "Add Quick Item",
+    "itemName": "Item Name",
+    "itemNamePlaceholder": "e.g. Medium Tea",
+    "price": "Price (₹)",
+    "pricePlaceholder": "10",
+    "addItem": "Add Item",
+    "adding": "Adding...",
+    "currentQuickItems": "Current Quick Items",
+    "noItems": "No items added yet."
+  },
+  "BottomNav": {
+    "tabs": "Tabs",
+    "khata": "Khata",
+    "settings": "Settings"
   }
 }

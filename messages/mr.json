@@ -17,7 +17,34 @@
     "failedToLoad": "सक्रिय टॅब लोड करण्यात अयशस्वी.",
     "noActiveTabs": "कोणतेही सक्रिय टॅब नाहीत",
     "noActiveTabsDesc": "ग्राहक आल्यावर टॅब सुरू करण्यासाठी खालील + बटण दाबा.",
-    "khata": "खाता",
     "unknown": "अज्ञात"
+  },
+  "Khata": {
+    "title": "खातावही",
+    "subtitle": "प्रलंबित देयके",
+    "totalOwed": "एकूण थकबाकी",
+    "failedToLoad": "खाता डेटाबेस लोड करण्यात अयशस्वी.",
+    "allClear": "सर्व क्लिअर!",
+    "nobodyOwes": "सध्या कुणाचेही पैसे देणे बाकी नाही.",
+    "tapToClear": "रक्कम क्लिअर करण्यासाठी टॅप करा"
+  },
+  "Settings": {
+    "title": "सेटिंग्ज",
+    "subtitle": "मानक इन्व्हेंटरी किमती व्यवस्थापित करा",
+    "failedToLoad": "आयटम लोड करण्यात अयशस्वी.",
+    "addQuickItem": "क्विक आयटम जोडा",
+    "itemName": "आयटमचे नाव",
+    "itemNamePlaceholder": "उदा. मध्यम चहा",
+    "price": "किंमत (₹)",
+    "pricePlaceholder": "10",
+    "addItem": "आयटम जोडा",
+    "adding": "जोडत आहे...",
+    "currentQuickItems": "सध्याचे क्विक आयटम",
+    "noItems": "अद्याप कोणताही आयटम जोडलेला नाही."
+  },
+  "BottomNav": {
+    "tabs": "टॅब",
+    "khata": "खातावही",
+    "settings": "सेटिंग्ज"
   }
 }

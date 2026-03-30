@@ -1,11 +1,13 @@
 import { createClient } from "@/utils/supabase/server";
 import SettingsClient from "./SettingsClient";
+import { getTranslations } from "next-intl/server";
 
 export const dynamic = 'force-dynamic';
 
 export default async function SettingsPage() {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
+  const t = await getTranslations("Settings");
 
   if (!user) return null;
 
@@ -18,13 +20,13 @@ export default async function SettingsPage() {
   return (
     <div className="px-4">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-neutral-900 tracking-tight">Settings</h2>
-        <p className="text-neutral-500 text-sm mt-1">Manage standard inventory prices</p>
+        <h2 className="text-2xl font-bold text-neutral-900 tracking-tight">{t('title')}</h2>
+        <p className="text-neutral-500 text-sm mt-1">{t('subtitle')}</p>
       </div>
 
       {error ? (
         <div className="p-4 bg-red-50 text-red-600 rounded-xl border border-red-100">
-          Failed to load items.
+          {t('failedToLoad')}
         </div>
       ) : (
         <SettingsClient items={items || []} ownerId={user.id} />
