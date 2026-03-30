@@ -1,4 +1,7 @@
 {
+  "Layout": {
+    "shopManager": "शॉप मॅनेजर"
+  },
   "Dashboard": {
     "title": "डॅशबोर्ड",
     "activeCustomers": "सक्रिय ग्राहक",
@@ -8,6 +11,13 @@
     "addToKhata": "खात्यात जोडा (उधारी)",
     "khataBook": "खातावही",
     "quickAddItems": "त्वरित वस्तू जोडा",
-    "settings": "सेटिंग्ज"
+    "settings": "सेटिंग्ज",
+    "activeTabsTitle": "सक्रिय टॅब",
+    "activeTabsSubtitle": "सध्या दुकानात असलेले ग्राहक",
+    "failedToLoad": "सक्रिय टॅब लोड करण्यात अयशस्वी.",
+    "noActiveTabs": "कोणतेही सक्रिय टॅब नाहीत",
+    "noActiveTabsDesc": "ग्राहक आल्यावर टॅब सुरू करण्यासाठी खालील + बटण दाबा.",
+    "khata": "खाता",
+    "unknown": "अज्ञात"
   }
 }

@@ -1,4 +1,7 @@
 {
+  "Layout": {
+    "shopManager": "Shop Manager"
+  },
   "Dashboard": {
     "title": "Dashboard",
     "activeCustomers": "Active Customers",
@@ -8,6 +11,13 @@
     "addToKhata": "Add to Khata",
     "khataBook": "Khata Book",
     "quickAddItems": "Quick Add Items",
-    "settings": "Settings"
+    "settings": "Settings",
+    "activeTabsTitle": "Active Tabs",
+    "activeTabsSubtitle": "Customers currently at the shop",
+    "failedToLoad": "Failed to load active tabs.",
+    "noActiveTabs": "No active tabs",
+    "noActiveTabsDesc": "Tap the + button below when a customer arrives to start a tab.",
+    "khata": "Khata",
+    "unknown": "Unknown"
   }
 }

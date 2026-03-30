@@ -3,6 +3,7 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { createClient } from "@/utils/supabase/server";
 import { LogOut } from "lucide-react";
 import { redirect } from "next/navigation";
+import { getTranslations } from "next-intl/server";
 
 export default async function DashboardLayout({
   children,
@@ -11,13 +12,14 @@ export default async function DashboardLayout({
 }) {
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
+  const t = await getTranslations("Layout");
 
   return (
     <div className="min-h-screen bg-neutral-50 font-sans text-neutral-900 antialiased selection:bg-blue-100 selection:text-blue-900 pb-20">
       <header className="sticky top-0 z-40 w-full bg-white border-b border-neutral-200">
         <div className="flex h-16 items-center justify-between px-4 max-w-md mx-auto">
           <div className="flex gap-2 items-center">
-            <h1 className="text-lg font-bold">Shop Manager</h1>
+            <h1 className="text-lg font-bold">{t("shopManager")}</h1>
           </div>
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
