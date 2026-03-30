@@ -42,6 +42,40 @@
     "currentQuickItems": "Current Quick Items",
     "noItems": "No items added yet."
   },
+  "NewTabDialog": {
+    "title": "New Customer Tab",
+    "customerName": "Customer Name",
+    "namePlaceholder": "e.g. Vinay",
+    "startTab": "Start Tab",
+    "starting": "Starting...",
+    "failedToCreate": "Failed to create tab. Please try again."
+  },
+  "PaymentDialog": {
+    "title": "Receive Payment",
+    "from": "from {name}",
+    "amountReceived": "Amount Received",
+    "owes": "Owes: ₹{amount}",
+    "full": "Full",
+    "confirm": "Confirm",
+    "saving": "Saving...",
+    "failedToRegister": "Failed to register payment."
+  },
+  "TabDetails": {
+    "quickAdd": "Quick Add",
+    "noQuickItems": "No quick items. Add them in Settings.",
+    "historyToday": "History Today",
+    "noItemsConsumed": "No items consumed yet",
+    "justNow": "Just now",
+    "failedToAdd": "Failed to add item",
+    "paidInFull": "Paid in Full",
+    "addToKhata": "Add to Khata",
+    "checkoutFailed": "Checkout failed",
+    "khata": "Khata"
+  },
+  "Login": {
+    "subtitle": "Manage your tabs, khata, and daily sales easily.",
+    "continueWithGoogle": "Continue with Google"
+  },
   "BottomNav": {
     "tabs": "Tabs",
     "khata": "Khata",

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { X, Check } from "lucide-react";
 import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export default function PaymentDialog({ 
   customer, 
@@ -18,6 +19,7 @@ export default function PaymentDialog({
   const [loading, setLoading] = useState(false);
   const supabase = createClient();
   const router = useRouter();
+  const t = useTranslations("PaymentDialog");
 
   if (!isOpen || !customer) return null;
 
@@ -56,7 +58,7 @@ export default function PaymentDialog({
       
     } catch (error) {
       console.error("Payment failed:", error);
-      alert("Failed to register payment.");
+      alert(t("failedToRegister"));
     } finally {
       setLoading(false);
     }
@@ -67,8 +69,8 @@ export default function PaymentDialog({
       <div className="w-full max-w-sm bg-white rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-10 sm:slide-in-from-bottom-0 sm:fade-in-from-0 fade-in duration-200">
         <div className="flex items-center justify-between p-6 pb-2 border-b border-neutral-100">
           <div>
-            <h2 className="text-xl font-bold text-neutral-900">Receive Payment</h2>
-            <p className="text-sm text-neutral-500 mt-1">from {customer.name}</p>
+            <h2 className="text-xl font-bold text-neutral-900">{t("title")}</h2>
+            <p className="text-sm text-neutral-500 mt-1">{t("from", { name: customer.name })}</p>
           </div>
           <button
             onClick={onClose}
@@ -81,8 +83,8 @@ export default function PaymentDialog({
         <form onSubmit={handlePayment} className="p-6 pb-8 sm:pb-6">
           <div className="mb-6">
             <label className="flex justify-between text-sm font-medium text-neutral-700 mb-2">
-              <span>Amount Received</span>
-              <span className="text-orange-500 font-bold">Owes: ₹{customer.total_khata_balance}</span>
+              <span>{t("amountReceived")}</span>
+              <span className="text-orange-500 font-bold">{t("owes", { amount: customer.total_khata_balance })}</span>
             </label>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-neutral-500 font-bold text-lg">₹</span>
@@ -109,14 +111,14 @@ export default function PaymentDialog({
               onClick={() => setAmount(customer.total_khata_balance.toString())}
               className="px-4 py-3 rounded-xl bg-orange-50 text-orange-600 font-bold text-sm border border-orange-100 active:scale-95 transition-all w-1/3"
             >
-              Full
+              {t("full")}
             </button>
             <button
               type="submit"
               disabled={loading || !amount || Number(amount) <= 0}
               className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-4 py-3 text-center text-lg font-bold text-white shadow-sm hover:bg-blue-700 active:bg-blue-800 disabled:opacity-50 disabled:active:bg-blue-600 transition-all"
             >
-              {loading ? "Saving..." : <><Check className="w-5 h-5"/> Confirm</>}
+              {loading ? t("saving") : <><Check className="w-5 h-5"/> {t("confirm")}</>}
             </button>
           </div>
         </form>

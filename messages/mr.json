@@ -42,6 +42,40 @@
     "currentQuickItems": "सध्याचे क्विक आयटम",
     "noItems": "अद्याप कोणताही आयटम जोडलेला नाही."
   },
+  "NewTabDialog": {
+    "title": "नवीन ग्राहक टॅब",
+    "customerName": "ग्राहकाचे नाव",
+    "namePlaceholder": "उदा. विनय",
+    "startTab": "टॅब सुरू करा",
+    "starting": "सुरू होत आहे...",
+    "failedToCreate": "टॅब तयार करण्यात अयशस्वी. कृपया पुन्हा प्रयत्न करा."
+  },
+  "PaymentDialog": {
+    "title": "पैसे मिळवा",
+    "from": "{name} कडून",
+    "amountReceived": "मिळालेली रक्कम",
+    "owes": "बाकी: ₹{amount}",
+    "full": "पूर्ण",
+    "confirm": "निश्चित करा",
+    "saving": "जतन करत आहे...",
+    "failedToRegister": "पेमेंट नोंदवण्यात अयशस्वी."
+  },
+  "TabDetails": {
+    "quickAdd": "जलद जोडा",
+    "noQuickItems": "कोणतेही क्विक आयटम नाहीत. ते सेटिंग्जमध्ये जोडा.",
+    "historyToday": "आजचा इतिहास",
+    "noItemsConsumed": "अद्याप कोणताही आयटम वापरला नाही",
+    "justNow": "नुकतेच",
+    "failedToAdd": "आयटम जोडण्यात अयशस्वी",
+    "paidInFull": "पूर्ण पैसे मिळाले",
+    "addToKhata": "खात्यात जोडा",
+    "checkoutFailed": "चेकआउट अयशस्वी",
+    "khata": "खातावही"
+  },
+  "Login": {
+    "subtitle": "तुमचे टॅब, खातावही आणि दैनंदिन विक्री सहजपणे व्यवस्थापित करा.",
+    "continueWithGoogle": "Google सह सुरू ठेवा"
+  },
   "BottomNav": {
     "tabs": "टॅब",
     "khata": "खातावही",

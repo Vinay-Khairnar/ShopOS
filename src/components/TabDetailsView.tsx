@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Plus, Coffee, Check, Users } from "lucide-react";
 import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 type Item = {
   id: string;
@@ -37,6 +38,7 @@ export default function TabDetailsView({
   const [loading, setLoading] = useState(false);
   const supabase = createClient();
   const router = useRouter();
+  const t = useTranslations("TabDetails");
 
   const haptic = () => {
     if (typeof navigator !== "undefined" && "vibrate" in navigator) {
@@ -80,7 +82,7 @@ export default function TabDetailsView({
       // Revert if failed
       setItems((prev) => prev.filter((i) => i.id !== tempId));
       setTotal((prev) => prev - Number(qItem.price));
-      alert("Failed to add item");
+      alert(t("failedToAdd"));
     }
   };
 
@@ -122,7 +124,7 @@ export default function TabDetailsView({
       router.push("/dashboard");
     } catch (err) {
       console.error(err);
-      alert("Checkout failed");
+      alert(t("checkoutFailed"));
     } finally {
       setLoading(false);
     }
@@ -133,11 +135,11 @@ export default function TabDetailsView({
       {/* Quick Add Section */}
       <div className="mb-8">
         <h3 className="text-sm font-bold text-neutral-500 uppercase tracking-wider mb-3 px-1">
-          Quick Add
+          {t("quickAdd")}
         </h3>
         {quickItems.length === 0 ? (
           <div className="text-sm text-neutral-400 italic px-1">
-            No quick items. Add them in Settings.
+            {t("noQuickItems")}
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-3">
@@ -162,18 +164,18 @@ export default function TabDetailsView({
       {/* Consumed Items List */}
       <div>
         <h3 className="text-sm font-bold text-neutral-500 uppercase tracking-wider mb-3 px-1">
-          History Today
+          {t("historyToday")}
         </h3>
         
         {items.length === 0 ? (
           <div className="bg-white border border-neutral-200 border-dashed rounded-2xl p-8 text-center">
-            <p className="text-neutral-500 font-medium">No items consumed yet</p>
+            <p className="text-neutral-500 font-medium">{t("noItemsConsumed")}</p>
           </div>
         ) : (
           <div className="space-y-3">
             {items.map((item) => {
               const date = new Date(item.timestamp);
-              const time = isNaN(date.getTime()) ? "Just now" : date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+              const time = isNaN(date.getTime()) ? t("justNow") : date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
               
               return (
                 <div key={item.id} className="flex justify-between items-center p-4 bg-white border border-neutral-100 rounded-2xl shadow-sm">
@@ -200,7 +202,7 @@ export default function TabDetailsView({
             className="flex-1 flex flex-col items-center justify-center p-3.5 bg-green-500 text-white font-bold rounded-2xl shadow-sm active:scale-95 transition-all outline-none disabled:opacity-50"
           >
             <Check className="w-5 h-5 mb-1 opacity-90" />
-            Paid in Full
+            {t("paidInFull")}
           </button>
           <button
             onClick={() => handleCheckout("khata")}
@@ -208,7 +210,7 @@ export default function TabDetailsView({
             className="flex-1 flex flex-col items-center justify-center p-3.5 bg-blue-600 text-white font-bold rounded-2xl shadow-sm active:scale-95 transition-all outline-none disabled:opacity-50"
           >
             <Users className="w-5 h-5 mb-1 opacity-90" />
-            Add to Khata
+            {t("addToKhata")}
           </button>
         </div>
       </div>

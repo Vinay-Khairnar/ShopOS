@@ -2,9 +2,12 @@
 
 import { createClient } from "@/utils/supabase/client";
 import { Store } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function LoginPage() {
   const supabase = createClient();
+  const t = useTranslations("Login");
+  const tLayout = useTranslations("Layout");
 
   const handleGoogleLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
@@ -26,10 +29,10 @@ export default function LoginPage() {
             <Store className="h-8 w-8 text-white" />
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-neutral-900">
-            Shop OS
+            {tLayout("shopManager")}
           </h1>
           <p className="mt-2 text-sm text-neutral-500">
-            Manage your tabs, khata, and daily sales easily.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -56,7 +59,7 @@ export default function LoginPage() {
                 fill="#EA4335"
               />
             </svg>
-            Continue with Google
+            {t("continueWithGoogle")}
           </button>
         </div>
       </div>

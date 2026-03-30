@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Plus, X } from "lucide-react";
 import { createClient } from "@/utils/supabase/client";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export default function NewTabDialog() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +12,7 @@ export default function NewTabDialog() {
   const [loading, setLoading] = useState(false);
   const supabase = createClient();
   const router = useRouter();
+  const t = useTranslations("NewTabDialog");
 
   const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -63,7 +65,7 @@ export default function NewTabDialog() {
       
     } catch (error) {
       console.error("Failed to create tab:", error);
-      alert("Failed to create tab. Please try again.");
+      alert(t("failedToCreate"));
     } finally {
       setLoading(false);
     }
@@ -83,7 +85,7 @@ export default function NewTabDialog() {
         <div className="fixed top-0 left-0 w-full h-[100dvh] z-[100] flex items-end justify-center bg-black/50 backdrop-blur-sm sm:items-center">
           <div className="w-full max-w-md bg-white rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-10 sm:slide-in-from-bottom-0 sm:fade-in-from-0 fade-in duration-200">
             <div className="flex items-center justify-between p-6 pb-2 border-b border-neutral-100">
-              <h2 className="text-xl font-bold text-neutral-900">New Customer Tab</h2>
+              <h2 className="text-xl font-bold text-neutral-900">{t("title")}</h2>
               <button
                 onClick={() => setIsOpen(false)}
                 className="rounded-full p-2 text-neutral-500 hover:bg-neutral-100 active:bg-neutral-200"
@@ -95,7 +97,7 @@ export default function NewTabDialog() {
             <form onSubmit={handleCreate} className="p-6 pb-8 sm:pb-6">
               <div className="mb-6">
                 <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
-                  Customer Name
+                  {t("customerName")}
                 </label>
                 <input
                   id="name"
@@ -104,7 +106,7 @@ export default function NewTabDialog() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g. Vinay"
+                  placeholder={t("namePlaceholder")}
                   className="w-full rounded-xl border-neutral-300 bg-neutral-50 px-4 py-3.5 text-lg text-neutral-900 shadow-sm focus:border-blue-500 focus:bg-white focus:ring-blue-500 outline-none border transition-colors"
                 />
               </div>
@@ -114,7 +116,7 @@ export default function NewTabDialog() {
                 disabled={loading || !name.trim()}
                 className="w-full rounded-xl bg-blue-600 px-4 py-4 text-center text-lg font-bold text-white shadow-sm hover:bg-blue-700 active:bg-blue-800 disabled:opacity-50 disabled:active:bg-blue-600 transition-all"
               >
-                {loading ? "Starting..." : "Start Tab"}
+                {loading ? t("starting") : t("startTab")}
               </button>
             </form>
           </div>

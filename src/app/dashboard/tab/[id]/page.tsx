@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import TabDetailsView from "@/components/TabDetailsView";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 type Params = {
   params: Promise<{ id: string }>;
@@ -12,6 +13,7 @@ export default async function TabPage(props: Params) {
   const params = await props.params;
   const tabId = params.id;
   const supabase = await createClient();
+  const t = await getTranslations("TabDetails");
 
   // Fetch Tab with Customer info
   const { data: tab, error: tabError } = await supabase
@@ -64,7 +66,7 @@ export default async function TabPage(props: Params) {
           </h1>
           {customer?.total_khata_balance > 0 && (
             <p className="text-xs font-semibold text-orange-500">
-              Khata: ₹{customer.total_khata_balance}
+              {t("khata")}: ₹{customer.total_khata_balance}
             </p>
           )}
         </div>
