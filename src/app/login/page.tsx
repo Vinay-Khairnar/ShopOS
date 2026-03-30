@@ -1,13 +1,12 @@
 "use client";
 
 import { createClient } from "@/utils/supabase/client";
-import { Store } from "lucide-react";
+import AnimatedLogo from "@/components/AnimatedLogo";
 import { useTranslations } from "next-intl";
 
 export default function LoginPage() {
   const supabase = createClient();
   const t = useTranslations("Login");
-  const tLayout = useTranslations("Layout");
 
   const handleGoogleLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
@@ -25,13 +24,8 @@ export default function LoginPage() {
     <div className="flex min-h-screen flex-col items-center justify-center p-6 bg-neutral-50">
       <div className="w-full max-w-md space-y-8 bg-white p-8 rounded-2xl shadow-sm border border-neutral-100">
         <div className="flex flex-col items-center text-center">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600 mb-6">
-            <Store className="h-8 w-8 text-white" />
-          </div>
-          <h1 className="text-3xl font-bold tracking-tight text-neutral-900">
-            {tLayout("shopManager")}
-          </h1>
-          <p className="mt-2 text-sm text-neutral-500">
+          <AnimatedLogo className="mb-4 mt-2 justify-center scale-125 origin-center pointer-events-none" />
+          <p className="mt-4 text-sm text-neutral-500">
             {t("subtitle")}
           </p>
         </div>
