@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Logistics OS | Shop Management',
-  description: 'Manage your shop efficiently.'
+  title: 'Shop OS | Shop Management',
+  description: 'Manage your shop efficiently with Shop OS.'
 };
 
 export default async function RootLayout({
