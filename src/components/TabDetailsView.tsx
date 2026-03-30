@@ -192,7 +192,7 @@ export default function TabDetailsView({
       </div>
 
       {/* Sticky Bottom Checkout Bar (Hides BottomNav natively via z-index & layout) */}
-      <div className="fixed bottom-0 left-0 w-full z-50 bg-white border-t border-neutral-200 p-4 pb-safe shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+      <div className="fixed bottom-0 left-0 w-full z-[60] bg-white border-t border-neutral-200 p-4 pb-safe shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
         <div className="max-w-md mx-auto flex gap-3">
           <button
             onClick={() => handleCheckout("paid")}

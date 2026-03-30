@@ -63,7 +63,7 @@ export default function PaymentDialog({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm px-4 sm:px-0">
+    <div className="fixed top-0 left-0 w-full h-[100dvh] z-[100] flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm px-4 sm:px-0">
       <div className="w-full max-w-sm bg-white rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-10 sm:slide-in-from-bottom-0 sm:fade-in-from-0 fade-in duration-200">
         <div className="flex items-center justify-between p-6 pb-2 border-b border-neutral-100">
           <div>
@@ -78,7 +78,7 @@ export default function PaymentDialog({
           </button>
         </div>
         
-        <form onSubmit={handlePayment} className="p-6">
+        <form onSubmit={handlePayment} className="p-6 pb-8 sm:pb-6">
           <div className="mb-6">
             <label className="flex justify-between text-sm font-medium text-neutral-700 mb-2">
               <span>Amount Received</span>

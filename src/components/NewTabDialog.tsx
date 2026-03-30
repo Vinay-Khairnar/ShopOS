@@ -80,7 +80,7 @@ export default function NewTabDialog() {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 backdrop-blur-sm sm:items-center">
+        <div className="fixed top-0 left-0 w-full h-[100dvh] z-[100] flex items-end justify-center bg-black/50 backdrop-blur-sm sm:items-center">
           <div className="w-full max-w-md bg-white rounded-t-3xl sm:rounded-2xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-10 sm:slide-in-from-bottom-0 sm:fade-in-from-0 fade-in duration-200">
             <div className="flex items-center justify-between p-6 pb-2 border-b border-neutral-100">
               <h2 className="text-xl font-bold text-neutral-900">New Customer Tab</h2>
@@ -92,7 +92,7 @@ export default function NewTabDialog() {
               </button>
             </div>
             
-            <form onSubmit={handleCreate} className="p-6">
+            <form onSubmit={handleCreate} className="p-6 pb-8 sm:pb-6">
               <div className="mb-6">
                 <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
                   Customer Name
