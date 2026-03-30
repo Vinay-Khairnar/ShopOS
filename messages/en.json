@@ -1,0 +1,13 @@
+{
+  "Dashboard": {
+    "title": "Dashboard",
+    "activeCustomers": "Active Customers",
+    "addNewTab": "Add New Tab",
+    "totalBill": "Total Bill",
+    "paidInFull": "Paid in Full",
+    "addToKhata": "Add to Khata",
+    "khataBook": "Khata Book",
+    "quickAddItems": "Quick Add Items",
+    "settings": "Settings"
+  }
+}

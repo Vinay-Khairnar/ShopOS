@@ -1,0 +1,13 @@
+{
+  "Dashboard": {
+    "title": "डैशबोर्ड",
+    "activeCustomers": "सक्रिय ग्राहक",
+    "addNewTab": "नया टैब जोड़ें",
+    "totalBill": "कुल बिल",
+    "paidInFull": "पूरा भुगतान प्राप्त (नकद/ऑनलाइन)",
+    "addToKhata": "खाता में जोड़ें (उधारी)",
+    "khataBook": "खाता बुक",
+    "quickAddItems": "क्विक ऐड आइटम",
+    "settings": "सेटिंग्स"
+  }
+}
