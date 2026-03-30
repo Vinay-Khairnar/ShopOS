@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 
 export default function AnimatedLogo({ className }: { className?: string }) {
   const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
     // Small delay to ensure CSS transition triggers after initial render
     const timer = setTimeout(() => setMounted(true), 50);
@@ -15,10 +14,10 @@ export default function AnimatedLogo({ className }: { className?: string }) {
   return (
     <div className={cn("flex items-center gap-2 group cursor-pointer", className)}>
       <svg
-        viewBox="0 0 160 40"
+        viewBox="0 0 180 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-[120px] sm:w-[160px] h-auto text-[#155fc3] drop-shadow-sm shrink-0"
+        className="w-[140px] sm:w-[180px] h-auto text-[#155fc3] drop-shadow-sm shrink-0 overflow-visible"
       >
         {/* Cart Handle & base line */}
         <path
